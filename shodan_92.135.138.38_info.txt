@@ -1,0 +1,370 @@
+IP: 92.135.138.38
+Organization: Orange S.A.
+Operating System: None
+
+Open Ports:
+Port: 21
+Service: Synology DiskStation NAS ftpd
+Banner: 220 DiskStation FTP server ready.
+530 Login incorrect.
+214- The following commands are recognized (* =>'s unimplemented).
+   USER    LPRT    MODE    MSOM*   RNTO    SITE    RMD     SIZE    AUTH 
+   PASS    EPRT    RETR    MSAM*   ABOR    SYST    XRMD    MDTM    PBSZ 
+   ACCT*   PASV    STOR    MRSQ*   DELE    STAT    PWD     MLST    PROT 
+   SMNT*   LPSV    APPE    MRCP*   CWD     HELP    XPWD    MLSD    CCC 
+   REIN*   EPSV    MLFL*   ALLO    XCWD    NOOP    CDUP    MFMT 
+   QUIT    TYPE    MAIL*   REST    LIST    MKD     XCUP    FEAT 
+   PORT    STRU    MSND*   RNFR    NLST    XMKD    STOU    OPTS 
+214 Direct comments to ftp-bugs@DiskStation.
+211- Extensions supported:
+ AUTH TLS
+ PBSZ
+ PROT
+ CCC
+ SIZE
+ MDTM
+ REST STREAM
+ MFMT
+ TVFS
+ MLST modify*;type*;unique*;size*;UNIX.mode*;UNIX.owner*;UNIX.group*;
+ MLSD modify*;type*;unique*;size*;UNIX.mode*;UNIX.owner*;UNIX.group*;
+ UTF8
+211 End.
+
+----------------------------------------
+Port: 25
+Service: Postfix smtpd
+Banner: 220 mail.baptistemichel.net ESMTP Postfix
+250-mail.baptistemichel.net
+250-PIPELINING
+250-SIZE 52428800
+250-ETRN
+250-STARTTLS
+250-AUTH PLAIN LOGIN
+250-AUTH=PLAIN LOGIN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 CHUNKING
+
+----------------------------------------
+Port: 80
+Service: nginx
+Banner: HTTP/1.1 500 Internal Server Error
+Server: nginx
+Date: Fri, 26 Jul 2024 15:21:37 GMT
+Content-Type: text/html
+Content-Length: 3566
+Connection: keep-alive
+Keep-Alive: timeout=20
+ETag: "62563e4e-dee"
+
+
+----------------------------------------
+Port: 82
+Service: N/A
+Banner: HTTP/1.1 200 OK
+Date: Fri, 02 Aug 2024 11:31:35 GMT
+Server:  
+Cache-Control: no-cache, private
+Pragma: no-cache
+Expires: Mon, 16 Apr 1973 13:10:00 GMT
+X-UA-Compatible: IE=5
+Transfer-Encoding: chunked
+Content-Type: text/html
+
+
+----------------------------------------
+Port: 110
+Service: N/A
+Banner: +OK Dovecot ready.
++OK
+CAPA
+TOP
+UIDL
+RESP-CODES
+PIPELINING
+AUTH-RESP-CODE
+STLS
+USER
+SASL PLAIN
+.
+
+----------------------------------------
+Port: 143
+Service: N/A
+Banner: * OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ STARTTLS AUTH=PLAIN] Dovecot ready.
+* CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ STARTTLS AUTH=PLAIN
+A001 OK Pre-login capabilities listed, post-login capabilities have more.
+* ID ("name" "Dovecot")
+A002 OK ID completed.
+A003 BAD Error in IMAP command received by server.
+* BYE Logging out
+A004 OK Logout completed.
+
+----------------------------------------
+Port: 443
+Service: nginx
+Banner: HTTP/1.1 400 Bad Request
+Server: nginx
+Date: Sun, 04 Aug 2024 13:11:41 GMT
+Content-Type: text/html
+Content-Length: 650
+Connection: close
+
+
+----------------------------------------
+Port: 465
+Service: Postfix smtpd
+Banner: 220 mail.baptistemichel.net ESMTP Postfix
+250-mail.baptistemichel.net
+250-PIPELINING
+250-SIZE 52428800
+250-ETRN
+250-AUTH PLAIN LOGIN
+250-AUTH=PLAIN LOGIN
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 CHUNKING
+
+----------------------------------------
+Port: 587
+Service: Postfix smtpd
+Banner: 220 mail.baptistemichel.net ESMTP Postfix
+250-mail.baptistemichel.net
+250-PIPELINING
+250-SIZE 52428800
+250-ETRN
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-8BITMIME
+250-DSN
+250 CHUNKING
+
+----------------------------------------
+Port: 993
+Service: N/A
+Banner: * OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ AUTH=PLAIN] Dovecot ready.
+* CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ AUTH=PLAIN
+A001 OK Pre-login capabilities listed, post-login capabilities have more.
+* ID ("name" "Dovecot")
+A002 OK ID completed.
+A003 BAD Error in IMAP command received by server.
+* BYE Logging out
+A004 OK Logout completed.
+
+----------------------------------------
+Port: 1194
+Service: N/A
+Banner: @\x9d\xe2&\x02/`\xf0\xf2\x00\x00\x00\x00\x00
+----------------------------------------
+Port: 5000
+Service: nginx
+Banner: HTTP/1.1 200 OK
+Server: nginx
+Date: Wed, 07 Aug 2024 20:15:10 GMT
+Content-Type: text/html; charset="UTF-8"
+Transfer-Encoding: chunked
+Connection: keep-alive
+Keep-Alive: timeout=20
+Vary: Accept-Encoding
+Cache-control: no-store
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+P3P: CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"
+Content-Security-Policy: base-uri 'self';  connect-src data: ws: wss: http: https:; default-src 'self' 'unsafe-eval' data: blob: https://*.synology.com https://www.synology.cn/ https://help.synology.cn/; font-src 'self' data: https://*.googleapis.com https://*.gstatic.com; form-action 'self'; frame-ancestors 'self'; frame-src 'self' data: blob: https://*.synology.com https://*.synology.cn http://*.synology.com http://*.synology.cn; img-src 'self' data: blob: https://*.google.com https://*.googleapis.com http://*.googlecode.com https://*.gstatic.com https://global.download.synology.com; media-src 'self' data: about: https://*.synology.com https://help.synology.cn;  script-src 'self' 'unsafe-eval' data: blob: https://maps.google.com https://ajax.googleapis.com https://help.synology.com https://help.synology.cn; style-src 'self' 'unsafe-inline' https://*.googleapis.com;
+
+
+Synology DiskStation Manager (DSM):
+  Version: 7.1.1-42962
+  Hostname: DiskStation
+  Custom Login Title: NAS MBA Exploit
+
+----------------------------------------
+Port: 5006
+Service: N/A
+Banner: HTTP/1.1 404 Not Found
+Date: Fri, 02 Aug 2024 16:24:50 GMT
+Server: Apache
+Content-Length: 196
+Content-Type: text/html; charset=iso-8859-1
+
+
+----------------------------------------
+Port: 8080
+Service: Apache httpd
+Banner: HTTP/1.1 200 OK
+Date: Sat, 27 Jul 2024 05:58:00 GMT
+Server: Apache/2.4.58 (Unix) OpenSSL/1.1.1w
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+Last-Modified: Tue, 14 Nov 2023 14:02:13 GMT
+Accept-Ranges: bytes
+Content-Length: 1242
+Vary: Accept-Encoding
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate
+Pragma: no-cache
+Content-Type: text/html
+
+
+----------------------------------------
+
+Vulnerabilities:
+Vulnerability: CVE-2013-0941
+  Summary: EMC RSA Authentication API before 8.1 SP1, RSA Web Agent before 5.3.5 for Apache Web Server, RSA Web Agent before 5.3.5 for IIS, RSA PAM Agent before 7.0, and RSA Agent before 6.1.4 for Microsoft Windows use an improper encryption algorithm and a weak key for maintaining the stored data of the node secret for the SecurID Authentication API, which allows local users to obtain sensitive information via cryptographic attacks on this data. Per: http://archives.neohapsis.com/archives/bugtraq/2013-05/att-0064/ESA-2013-029.txt
+
+"RSA SecurID Sensitive Information Disclosure Vulnerability"
+  Published Date: 2013-05-22T13:29:00
+  CVSS Score: 2.1
+  Recommendations: ['http://archives.neohapsis.com/archives/bugtraq/2013-05/0064.html']
+Vulnerability: CVE-2023-5678
+  Summary: Issue summary: Generating excessively long X9.42 DH keys or checking
+excessively long X9.42 DH keys or parameters may be very slow.
+
+Impact summary: Applications that use the functions DH_generate_key() to
+generate an X9.42 DH key may experience long delays.  Likewise, applications
+that use DH_check_pub_key(), DH_check_pub_key_ex() or EVP_PKEY_public_check()
+to check an X9.42 DH key or X9.42 DH parameters may experience long delays.
+Where the key or parameters that are being checked have been obtained from
+an untrusted source this may lead to a Denial of Service.
+
+While DH_check() performs all the necessary checks (as of CVE-2023-3817),
+DH_check_pub_key() doesn't make any of these checks, and is therefore
+vulnerable for excessively large P and Q parameters.
+
+Likewise, while DH_generate_key() performs a check for an excessively large
+P, it doesn't check for an excessively large Q.
+
+An application that calls DH_generate_key() or DH_check_pub_key() and
+supplies a key or parameters obtained from an untrusted source could be
+vulnerable to a Denial of Service attack.
+
+DH_generate_key() and DH_check_pub_key() are also called by a number of
+other OpenSSL functions.  An application calling any of those other
+functions may similarly be affected.  The other functions affected by this
+are DH_check_pub_key_ex(), EVP_PKEY_public_check(), and EVP_PKEY_generate().
+
+Also vulnerable are the OpenSSL pkey command line application when using the
+"-pubcheck" option, as well as the OpenSSL genpkey command line application.
+
+The OpenSSL SSL/TLS implementation is not affected by this issue.
+
+The OpenSSL 3.0 and 3.1 FIPS providers are not affected by this issue.
+
+
+  Published Date: 2023-11-06T16:15:00
+  CVSS Score: None
+  Recommendations: ['https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=710fee740904b6290fef0dd5536fbcedbc38ff0c', 'https://www.openssl.org/news/secadv/20231106.txt', 'https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=db925ae2e65d0d925adef429afc37f75bd1c2017', 'https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=ddeb4b6c6d527e54ce9a99cba785c0f7776e54b6', 'https://git.openssl.org/gitweb/?p=openssl.git;a=commitdiff;h=34efaef6c103d636ab507a0cc34dca4d3aecc055', 'https://security.netapp.com/advisory/ntap-20231130-0010/', 'http://www.openwall.com/lists/oss-security/2024/03/11/1']
+Vulnerability: CVE-2009-3765
+  Summary: mutt_ssl.c in mutt 1.5.19 and 1.5.20, when OpenSSL is used, does not properly handle a '\0' character in a domain name in the subject's Common Name (CN) field of an X.509 certificate, which allows man-in-the-middle attackers to spoof arbitrary SSL servers via a crafted certificate issued by a legitimate Certification Authority, a related issue to CVE-2009-2408.
+  Published Date: 2009-10-23T19:30:00
+  CVSS Score: 6.8
+  Recommendations: ['http://dev.mutt.org/trac/changeset/6016:dc09812e63a3/mutt_ssl.c', 'http://lists.opensuse.org/opensuse-security-announce/2009-10/msg00001.html', 'http://marc.info/?l=oss-security&m=125198917018936&w=2', 'http://marc.info/?l=oss-security&m=125369675820512&w=2']
+Vulnerability: CVE-2024-27316
+  Summary: HTTP/2 incoming headers exceeding the limit are temporarily buffered in nghttp2 in order to generate an informative HTTP 413 response. If a client does not stop sending headers, this leads to memory exhaustion.
+  Published Date: 2024-04-04T20:15:00
+  CVSS Score: None
+  Recommendations: ['https://httpd.apache.org/security/vulnerabilities_24.html', 'http://www.openwall.com/lists/oss-security/2024/04/04/4', 'https://www.openwall.com/lists/oss-security/2024/04/03/16', 'https://support.apple.com/kb/HT214119', 'http://seclists.org/fulldisclosure/2024/Jul/18']
+Vulnerability: CVE-2024-0727
+  Summary: Issue summary: Processing a maliciously formatted PKCS12 file may lead OpenSSL
+to crash leading to a potential Denial of Service attack
+
+Impact summary: Applications loading files in the PKCS12 format from untrusted
+sources might terminate abruptly.
+
+A file in PKCS12 format can contain certificates and keys and may come from an
+untrusted source. The PKCS12 specification allows certain fields to be NULL, but
+OpenSSL does not correctly check for this case. This can lead to a NULL pointer
+dereference that results in OpenSSL crashing. If an application processes PKCS12
+files from an untrusted source using the OpenSSL APIs then that application will
+be vulnerable to this issue.
+
+OpenSSL APIs that are vulnerable to this are: PKCS12_parse(),
+PKCS12_unpack_p7data(), PKCS12_unpack_p7encdata(), PKCS12_unpack_authsafes()
+and PKCS12_newpass().
+
+We have also fixed a similar issue in SMIME_write_PKCS7(). However since this
+function is related to writing data we do not consider it security significant.
+
+The FIPS modules in 3.2, 3.1 and 3.0 are not affected by this issue.
+  Published Date: 2024-01-26T09:15:00
+  CVSS Score: None
+  Recommendations: ['https://www.openssl.org/news/secadv/20240125.txt', 'https://github.com/openssl/openssl/commit/775acfdbd0c6af9ac855f34969cdab0c0c90844a', 'https://github.com/openssl/openssl/commit/d135eeab8a5dbf72b3da5240bab9ddb7678dbd2c', 'https://github.com/openssl/openssl/commit/09df4395b5071217b76dc7d3d2e630eb8c5a79c2', 'https://github.openssl.org/openssl/extended-releases/commit/03b3941d60c4bce58fab69a0c22377ab439bc0e8', 'https://github.openssl.org/openssl/extended-releases/commit/aebaa5883e31122b404e450732dc833dc9dee539', 'https://security.netapp.com/advisory/ntap-20240208-0006/', 'http://www.openwall.com/lists/oss-security/2024/03/11/1']
+Vulnerability: CVE-2009-2299
+  Summary: The Artofdefence Hyperguard Web Application Firewall (WAF) module before 2.5.5-11635, 3.0 before 3.0.3-11636, and 3.1 before 3.1.1-11637, a module for the Apache HTTP Server, allows remote attackers to cause a denial of service (memory consumption) via an HTTP request with a large Content-Length value but no POST data.
+  Published Date: 2009-07-02T10:30:00
+  CVSS Score: 5.0
+  Recommendations: ['http://secunia.com/advisories/35645', 'http://www.h4ck1nb3rg.at/wafs/advisory_artofdefence_hyperguard_200907.txt', 'http://www.securityfocus.com/archive/1/504680/100/0/threaded']
+Vulnerability: CVE-2009-3767
+  Summary: libraries/libldap/tls_o.c in OpenLDAP 2.2 and 2.4, and possibly other versions, when OpenSSL is used, does not properly handle a '\0' character in a domain name in the subject's Common Name (CN) field of an X.509 certificate, which allows man-in-the-middle attackers to spoof arbitrary SSL servers via a crafted certificate issued by a legitimate Certification Authority, a related issue to CVE-2009-2408.
+  Published Date: 2009-10-23T19:30:00
+  CVSS Score: 4.3
+  Recommendations: ['http://lists.apple.com/archives/security-announce/2009/Nov/msg00000.html', 'http://lists.fedoraproject.org/pipermail/package-announce/2010-March/036138.html', 'http://lists.opensuse.org/opensuse-security-announce/2009-10/msg00001.html', 'http://marc.info/?l=oss-security&m=125198917018936&w=2', 'http://marc.info/?l=oss-security&m=125369675820512&w=2', 'http://secunia.com/advisories/38769', 'http://secunia.com/advisories/40677', 'http://security.gentoo.org/glsa/glsa-201406-36.xml', 'http://support.apple.com/kb/HT3937', 'http://www.openldap.org/devel/cvsweb.cgi/libraries/libldap/tls_o.c.diff?r1=1.8&r2=1.11&f=h', 'http://www.redhat.com/support/errata/RHSA-2010-0543.html', 'http://www.redhat.com/support/errata/RHSA-2011-0896.html', 'http://www.vupen.com/english/advisories/2009/3056', 'http://www.vupen.com/english/advisories/2010/1858', 'https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A11178', 'https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A7274']
+Vulnerability: CVE-2009-1390
+  Summary: Mutt 1.5.19, when linked against (1) OpenSSL (mutt_ssl.c) or (2) GnuTLS (mutt_ssl_gnutls.c), allows connections when only one TLS certificate in the chain is accepted instead of verifying the entire chain, which allows remote attackers to spoof trusted servers via a man-in-the-middle attack.
+  Published Date: 2009-06-16T21:00:00
+  CVSS Score: 6.8
+  Recommendations: ['http://dev.mutt.org/hg/mutt/rev/64bf199c8d8a', 'http://dev.mutt.org/hg/mutt/rev/8f11dd00c770', 'http://www.openwall.com/lists/oss-security/2009/06/10/2', 'http://www.securityfocus.com/bid/35288', 'https://exchange.xforce.ibmcloud.com/vulnerabilities/51068', 'https://www.redhat.com/archives/fedora-package-announce/2009-June/msg00715.html']
+Vulnerability: CVE-2012-4001
+  Summary: The mod_pagespeed module before 0.10.22.6 for the Apache HTTP Server does not properly verify its host name, which allows remote attackers to trigger HTTP requests to arbitrary hosts via unspecified vectors, as demonstrated by requests to intranet servers.
+  Published Date: 2012-09-15T10:37:00
+  CVSS Score: 5.0
+  Recommendations: ['https://developers.google.com/speed/docs/mod_pagespeed/announce-0.10.22.6', 'https://developers.google.com/speed/docs/mod_pagespeed/CVE-2012-4001']
+Vulnerability: CVE-2013-0942
+  Summary: Cross-site scripting (XSS) vulnerability in EMC RSA Authentication Agent 7.1 before 7.1.1 for Web for Internet Information Services, and 7.1 before 7.1.1 for Web for Apache, allows remote attackers to inject arbitrary web script or HTML via unspecified vectors.
+  Published Date: 2013-05-22T13:29:00
+  CVSS Score: 4.3
+  Recommendations: ['http://archives.neohapsis.com/archives/bugtraq/2013-05/0043.html']
+Vulnerability: CVE-2019-0190
+  Summary: A bug exists in the way mod_ssl handled client renegotiations. A remote attacker could send a carefully crafted request that would cause mod_ssl to enter a loop leading to a denial of service. This bug can be only triggered with Apache HTTP Server version 2.4.37 when using OpenSSL version 1.1.1 or later, due to an interaction in changes to handling of renegotiation attempts.
+  Published Date: 2019-01-30T22:29:00
+  CVSS Score: 5.0
+  Recommendations: ['https://httpd.apache.org/security/vulnerabilities_24.html', 'https://security.netapp.com/advisory/ntap-20190125-0001/', 'http://www.securityfocus.com/bid/106743', 'https://security.gentoo.org/glsa/201903-21', 'https://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html', 'https://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html', 'https://lists.apache.org/thread.html/56c2e7cc9deb1c12a843d0dc251ea7fd3e7e80293cde02fcd65286ba@%3Ccvs.httpd.apache.org%3E', 'https://lists.apache.org/thread.html/84a3714f0878781f6ed84473d1a503d2cc382277e100450209231830@%3Ccvs.httpd.apache.org%3E', 'https://lists.apache.org/thread.html/rd18c3c43602e66f9cdcf09f1de233804975b9572b0456cc582390b6f@%3Ccvs.httpd.apache.org%3E', 'https://lists.apache.org/thread.html/re3d27b6250aa8548b8845d314bb8a350b3df326cacbbfdfe4d455234@%3Ccvs.httpd.apache.org%3E', 'https://lists.apache.org/thread.html/rf6449464fd8b7437704c55f88361b66f12d5b5f90bcce66af4be4ba9@%3Ccvs.httpd.apache.org%3E', 'https://lists.apache.org/thread.html/rc998b18880df98bafaade071346690c2bc1444adaa1a1ea464b93f0a@%3Ccvs.httpd.apache.org%3E', 'https://lists.apache.org/thread.html/r9f93cf6dde308d42a9c807784e8102600d0397f5f834890708bf6920@%3Ccvs.httpd.apache.org%3E', 'https://lists.apache.org/thread.html/rd2fb621142e7fa187cfe12d7137bf66e7234abcbbcd800074c84a538@%3Ccvs.httpd.apache.org%3E', 'https://lists.apache.org/thread.html/r06f0d87ebb6d59ed8379633f36f72f5b1f79cadfda72ede0830b42cf@%3Ccvs.httpd.apache.org%3E', 'https://lists.apache.org/thread.html/r03ee478b3dda3e381fd6189366fa7af97c980d2f602846eef935277d@%3Ccvs.httpd.apache.org%3E', 'https://lists.apache.org/thread.html/re473305a65b4db888e3556e4dae10c2a04ee89dcff2e26ecdbd860a9@%3Ccvs.httpd.apache.org%3E', 'https://lists.apache.org/thread.html/rd336919f655b7ff309385e34a143e41c503e133da80414485b3abcc9@%3Ccvs.httpd.apache.org%3E', 'https://lists.apache.org/thread.html/r76142b8c5119df2178be7c2dba88fde552eedeec37ea993dfce68d1d@%3Ccvs.httpd.apache.org%3E']
+Vulnerability: CVE-2009-0796
+  Summary: Cross-site scripting (XSS) vulnerability in Status.pm in Apache::Status and Apache2::Status in mod_perl1 and mod_perl2 for the Apache HTTP Server, when /perl-status is accessible, allows remote attackers to inject arbitrary web script or HTML via the URI.
+  Published Date: 2009-04-07T23:30:00
+  CVSS Score: 2.6
+  Recommendations: ['http://www.gossamer-threads.com/lists/modperl/modperl/99475#99475', 'http://svn.apache.org/viewvc/perl/modperl/branches/1.x/lib/Apache/Status.pm?r1=177851&r2=761081&pathrev=761081&diff_format=h', 'http://www.gossamer-threads.com/lists/modperl/modperl-cvs/99477#99477', 'https://bugzilla.redhat.com/show_bug.cgi?id=494402', 'http://svn.apache.org/viewvc?view=rev&revision=761081', 'https://launchpad.net/bugs/cve/2009-0796', 'http://www.vupen.com/english/advisories/2009/0943', 'http://www.securitytracker.com/id?1021988', 'http://www.mandriva.com/security/advisories?name=MDVSA-2009:091', 'http://secunia.com/advisories/34597', 'http://www.securityfocus.com/bid/34383', 'http://sunsolve.sun.com/search/document.do?assetkey=1-77-1021508.1-1', 'http://sunsolve.sun.com/search/document.do?assetkey=1-77-1021709.1-1', 'http://support.apple.com/kb/HT4435', 'http://lists.apple.com/archives/security-announce/2010//Nov/msg00000.html', 'https://oval.cisecurity.org/repository/search/definition/oval%3Aorg.mitre.oval%3Adef%3A8488', 'http://www.securityfocus.com/archive/1/502709/100/0/threaded']
+Vulnerability: CVE-2009-3766
+  Summary: mutt_ssl.c in mutt 1.5.16 and other versions before 1.5.19, when OpenSSL is used, does not verify the domain name in the subject's Common Name (CN) field of an X.509 certificate, which allows man-in-the-middle attackers to spoof SSL servers via an arbitrary valid certificate.
+  Published Date: 2009-10-23T19:30:00
+  CVSS Score: 6.8
+  Recommendations: ['http://dev.mutt.org/trac/ticket/3087', 'http://marc.info/?l=oss-security&m=125198917018936&w=2', 'http://www.openwall.com/lists/oss-security/2009/10/26/1']
+Vulnerability: CVE-2012-3526
+  Summary: The reverse proxy add forward module (mod_rpaf) 0.5 and 0.6 for the Apache HTTP Server allows remote attackers to cause a denial of service (server or application crash) via multiple X-Forwarded-For headers in a request.
+  Published Date: 2012-09-05T23:55:00
+  CVSS Score: 5.0
+  Recommendations: ['http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=683984', 'http://secunia.com/advisories/50400', 'http://www.debian.org/security/2012/dsa-2532', 'http://www.openwall.com/lists/oss-security/2012/08/22/2', 'http://www.openwall.com/lists/oss-security/2012/08/22/7', 'http://www.securityfocus.com/bid/55154', 'http://zecrazytux.net/troubleshooting/apache2-segfault-debugging-tutorial', 'https://exchange.xforce.ibmcloud.com/vulnerabilities/77987']
+Vulnerability: CVE-2013-2765
+  Summary: The ModSecurity module before 2.7.4 for the Apache HTTP Server allows remote attackers to cause a denial of service (NULL pointer dereference, process crash, and disk consumption) via a POST request with a large body and a crafted Content-Type header.
+  Published Date: 2013-07-15T15:55:00
+  CVSS Score: 5.0
+  Recommendations: ['http://archives.neohapsis.com/archives/bugtraq/2013-05/0125.html', 'http://lists.opensuse.org/opensuse-updates/2013-08/msg00020.html', 'http://lists.opensuse.org/opensuse-updates/2013-08/msg00025.html', 'http://lists.opensuse.org/opensuse-updates/2013-08/msg00031.html', 'http://sourceforge.net/mailarchive/message.php?msg_id=30900019', 'http://www.modsecurity.org/', 'http://www.shookalabs.com/', 'https://bugzilla.redhat.com/show_bug.cgi?id=967615', 'https://github.com/shookalabs/exploits/blob/master/modsecurity_cve_2013_2765_check.py', 'https://github.com/SpiderLabs/ModSecurity/commit/0840b13612a0b7ef1ce7441cf811dcfc6b463fba', 'https://raw.github.com/SpiderLabs/ModSecurity/master/CHANGES']
+Vulnerability: CVE-2013-4365
+  Summary: Heap-based buffer overflow in the fcgid_header_bucket_read function in fcgid_bucket.c in the mod_fcgid module before 2.3.9 for the Apache HTTP Server allows remote attackers to have an unspecified impact via unknown vectors.
+  Published Date: 2013-10-17T23:55:00
+  CVSS Score: 7.5
+  Recommendations: ['http://lists.opensuse.org/opensuse-security-announce/2013-11/msg00011.html', 'http://lists.opensuse.org/opensuse-updates/2013-10/msg00055.html', 'http://lists.opensuse.org/opensuse-updates/2013-10/msg00059.html', 'http://lists.opensuse.org/opensuse-updates/2013-11/msg00024.html', 'http://secunia.com/advisories/55197', 'http://svn.apache.org/viewvc?view=revision&revision=1527362', 'http://www.debian.org/security/2013/dsa-2778', 'http://www.mail-archive.com/dev@httpd.apache.org/msg58077.html', 'http://www.securityfocus.com/bid/62939']
+Vulnerability: CVE-2011-2688
+  Summary: SQL injection vulnerability in mysql/mysql-auth.pl in the mod_authnz_external module 3.2.5 and earlier for the Apache HTTP Server allows remote attackers to execute arbitrary SQL commands via the user field.
+  Published Date: 2011-07-28T18:55:00
+  CVSS Score: 7.5
+  Recommendations: ['http://anders.fix.no/software/#unix', 'http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=633637', 'http://code.google.com/p/mod-auth-external/issues/detail?id=5', 'http://secunia.com/advisories/45240', 'http://www.debian.org/security/2011/dsa-2279', 'http://www.openwall.com/lists/oss-security/2011/07/12/10', 'http://www.openwall.com/lists/oss-security/2011/07/12/17', 'http://www.securityfocus.com/bid/48653', 'https://exchange.xforce.ibmcloud.com/vulnerabilities/68799']
+Vulnerability: CVE-2011-1176
+  Summary: The configuration merger in itk.c in the Steinar H. Gunderson mpm-itk Multi-Processing Module 2.2.11-01 and 2.2.11-02 for the Apache HTTP Server does not properly handle certain configuration sections that specify NiceValue but not AssignUserID, which might allow remote attackers to gain privileges by leveraging the root uid and root gid of an mpm-itk process.
+  Published Date: 2011-03-29T18:55:00
+  CVSS Score: 4.3
+  Recommendations: ['http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=618857', 'http://lists.err.no/pipermail/mpm-itk/2011-March/000393.html', 'http://lists.err.no/pipermail/mpm-itk/2011-March/000394.html', 'http://openwall.com/lists/oss-security/2011/03/20/1', 'http://openwall.com/lists/oss-security/2011/03/21/13', 'http://www.debian.org/security/2011/dsa-2202', 'http://www.mandriva.com/security/advisories?name=MDVSA-2011:057', 'http://www.securityfocus.com/bid/46953', 'http://www.vupen.com/english/advisories/2011/0748', 'http://www.vupen.com/english/advisories/2011/0749', 'http://www.vupen.com/english/advisories/2011/0824', 'https://exchange.xforce.ibmcloud.com/vulnerabilities/66248']
+Vulnerability: CVE-2007-4723
+  Summary: Directory traversal vulnerability in Ragnarok Online Control Panel 4.3.4a, when the Apache HTTP Server is used, allows remote attackers to bypass authentication via directory traversal sequences in a URI that ends with the name of a publicly available page, as demonstrated by a "/...../" sequence and an account_manage.php/login.php final component for reaching the protected account_manage.php page.
+  Published Date: 2007-09-05T19:17:00
+  CVSS Score: 7.5
+  Recommendations: ['http://osvdb.org/45879', 'http://securityreason.com/securityalert/3100', 'http://www.securityfocus.com/archive/1/478263/100/0/threaded']
+Vulnerability: CVE-2012-4360
+  Summary: Cross-site scripting (XSS) vulnerability in the mod_pagespeed module 0.10.19.1 through 0.10.22.4 for the Apache HTTP Server allows remote attackers to inject arbitrary web script or HTML via unspecified vectors.
+  Published Date: 2012-09-15T10:37:00
+  CVSS Score: 4.3
+  Recommendations: ['http://osvdb.org/85430', 'https://developers.google.com/speed/docs/mod_pagespeed/announce-0.10.22.6', 'https://developers.google.com/speed/docs/mod_pagespeed/CVE-2012-4360', 'https://exchange.xforce.ibmcloud.com/vulnerabilities/78563']
