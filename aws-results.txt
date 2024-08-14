@@ -1,0 +1,16 @@
+Checking S3 Buckets for security risks...
+
+Bucket: dadhemir-img-repo
+  INFO: No policy found for bucket dadhemir-img-repo.
+Bucket: invoices
+  INFO: No policy found for bucket invoices.
+Bucket: aws-logs-115365965555-us-east-1
+  INFO: No policy found for bucket aws-logs-115365965555-us-east-1.
+Bucket: backups_transunidos
+ERROR: An error occurred (NoSuchBucket) when calling the GetBucketAcl operation: The specified bucket does not exist
+
+Checking IAM Users without MFA...
+
+  WARNING: User ceo@transunidos.cl has console access but no MFA enabled!
+
+Checking Lambda Functions for security risks...
