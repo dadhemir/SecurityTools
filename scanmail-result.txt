@@ -1,0 +1,32 @@
+Email Review by GPT-4:
+From: DAYHENLLY CAROLINA ARIAS CARRERO <Dayhenlly.Arias@essa.com.co>
+To: "ademir@platzi.com" <ademir@platzi.com>
+Subject:  RV: Tu buzón de correo ha superado el límite
+Analysis:
+Based on the analysis of the provided email content, it appears to be a phishing email. Here are the key indicators:
+
+1. **Sender's Email Address**:
+   - The email is purportedly from "Soporte usuarios" with the email address `soporteusuarios@MicrosoftSupport.com`. Official Microsoft support emails usually come from a domain like `@microsoft.com` or `@support.microsoft.com`, not `@MicrosoftSupport.com`.
+
+2. **Urgency and Threats**:
+   - The email creates a sense of urgency by warning that the mailbox has exceeded its quota and that the user may not be able to send or receive emails unless they take immediate action. This is a common tactic in phishing to prompt quick, unconsidered action.
+
+3. **Suspicious Links**:
+   - The email contains a hyperlink labeled "HAGA CLIC AQUÍ" which points to a URL `https://www.supportin.es/...`. This URL does not belong to Microsoft and is suspicious. Hovering over links without clicking is a good practice to check the actual URL.
+
+4. **Generic Greeting**:
+   - The email addresses the recipient with their full name, which can be a sign of a phishing attempt. Legitimate emails from Microsoft support are more likely to use a more personalized greeting.
+
+5. **Inconsistencies and Errors**:
+   - The email contains several inconsistencies and errors, such as the use of different fonts and formatting. There are also minor grammatical errors and awkward phrasing, which are often found in phishing emails.
+
+6. **Unusual Request**:
+   - The email asks the recipient to click a link and provide personal information to update their mailbox size. Legitimate companies typically do not ask for personal information through email links.
+
+7. **Suspicious Attachments**:
+   - The presence of embedded images with unusual names (`image001.png@01DAD9D1.EACE93D0`, etc.) is another red flag. Phishing emails often use images to make the email look legitimate.
+
+8. **Legal Disclaimers**:
+   - While the email includes legal disclaimers, these can be easily copied from legitimate sources and do not guarantee the email's authenticity.
+
+Based on these indicators, the email is highly likely to be a phishing attempt. It is recommended not to click any links or provide any personal information. Instead, report the email to your IT department or email provider for further investigation.
