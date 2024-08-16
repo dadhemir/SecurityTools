@@ -1,0 +1,5 @@
+python-nmap
+openai==0.28
+shodan
+requests
+boto3
