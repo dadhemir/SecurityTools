@@ -1,0 +1,46 @@
+**Summary of Findings from Firewall Log Data Analysis**:
+
+1. **High Volume of TCP RDP Attempts (Target Port 3389)**:
+   - Multiple IP addresses originating from various geographic locations are attempting to connect to the internal IP `192.168.60.249` on port 3389 (Remote Desktop Protocol - RDP). 
+   - The frequent attempts on this port from various IPs indicate probable brute force or dictionary attack attempts against the RDP service.
+
+2. **Repeated Attempts on Various High-Risk Ports**:
+   - **Telnet (Port 23)**: Multiple attempts have been detected targeting `192.168.1.148` on port 23, which is an old and insecure protocol often targeted for its vulnerabilities.
+   - **Microsoft-DS/SMB (Port 445)**: Repeated attempts from different IP addresses trying to access `192.168.1.148` on port 445.
+   - **Windows/Microsoft Management (Port 8291 and various other ports)**: Various IP addresses are targeting the same internal IP `192.168.1.148` on port 8291 and ports like 554 (RTSP), 555 (Unassigned), 1433, 443 (HTTPS), 3306, 1900, indicating possible attempts to exploit known vulnerabilities.
+
+3. **Suspicious UDP Traffic**:
+   - Instances of high-volume UDP traffic targeting random high ports on `192.168.1.148` from IPs like `49.51.83.211`, `49.51.85.190`, and `49.51.82.19`. This indicates potential denial-of-service (DoS) attacks or attempts to exploit UDP-based vulnerabilities.
+   - Numerous attempts targeting NetBIOS (port 137) from a local IP `169.254.183.13` against `192.168.60.253`, this could indicate misconfigured devices or possibly infested machines attempting network enumeration.
+
+4. **Other High-Risk Ports Targeted**:
+   - Multiple sources attempting to connect `192.168.1.148` on other high-risk ports like 8443 (often SSL VPN or web interface), 6001, 10001, 177, 11092, 3621, 3704, and 21(FTP).
+   - Attempts to connect 192.168.1.148 from IPs using various other uncommon or ephemeral ports may indicate scanning or probing activities.
+
+5. **Known Source IPs Engaged in Repeated Suspicious Activity**:
+   - Certain IPs appear repeatedly attempting connections on multiple different high-risk ports — this might indicate determined attackers or compromised machines being used for reconnaissance and exploit attempts.
+
+**Recommendations**:
+1. **Increase RDP Security**: 
+   - Consider implementing stronger rules for RDP connections such as using VPNs for RDP access, enforcing multi-factor authentication (MFA), and whitelisting known IP addresses.
+   - Rate limiting and account lockout policies should be applied to reduce the effect of brute force attacks.
+   
+2. **Close Unneeded Ports**: 
+   - Ensure that any services that are not needed are deactivated and their corresponding ports closed.
+   - Ports such as 23 (Telnet) should not be accessible due to their known vulnerabilities.
+
+3. **Firewall and IDS/IPS Configuration**:
+   - Strengthen firewall rules to identify and block IPs engaging in suspicious behavior.
+   - Implement Intrusion Detection Systems (IDS) or Intrusion Prevention Systems (IPS) to help detect and prevent such attacks.
+
+4. **Enhanced Monitoring & Logging**:
+   - Continuously monitor logs for unusual or suspicious activities.
+   - Implement centralized logging and automated analysis tools to quickly identify and respond to potential threats.
+
+5. **Patch Management**:
+   - Regularly update and patch systems to close vulnerabilities that could be exploited by attackers attempting to use these high-risk ports.
+  
+6. **User Training & Awareness**:
+   - Educate users about risks associated with unverified or suspicious email links and downloads as they might be vectors for attacks targeting the vulnerabilities indicated by these logs.
+
+By taking these actions, the organization can mitigate potential threats indicated by the firewall log data and enhance overall network security.

@@ -48,7 +48,7 @@ def generate_security_report(host_info):
     for port in host_info['open_ports']:
         prompt += f"\nPort: {port['port']}, Service: {port['name']}, Product: {port['product']}, Version: {port['version']}, Extra Info: {port['extrainfo']}"
 
-    # Query OpenAI API using GPT-4-turbo
+    # Query OpenAI API
     response = openai.ChatCompletion.create(
         model="gpt-4o-2024-05-13",
         messages=[

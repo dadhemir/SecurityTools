@@ -37,7 +37,7 @@ def review_email_with_gpt4(email_details):
     # Combine body and html for analysis
     content = email_details['body'] + "\n\n" + email_details['html']
 
-    # Query GPT-4 for review
+    # Query GPT-4o for review
     response = openai.ChatCompletion.create(
         model="gpt-4o-2024-05-13",
         messages=[
