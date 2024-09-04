@@ -4,3 +4,5 @@ shodan
 requests
 boto3
 awscli
+pandas
+openpyxl
