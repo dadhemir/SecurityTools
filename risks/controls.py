@@ -75,7 +75,7 @@ def preguntar_si_aplicado(codigo, nombre):
           print("Por favor, responda 'si' o 'no'.")
 
 # Ejemplo de uso
-archivo_xlsx = 'C:/Users/adhem/OneDrive/Documentos/Code_InfoSec/SecurityConf/SecurityTools/risks/controls_iso27002.xlsx'
+archivo_xlsx = 'X:/.../controls_iso27002.xlsx'
 
 probabilidad = obtener_valor_numerico("Ingrese el valor de probabilidad: ")
 impacto = obtener_valor_numerico("Ingrese el valor de impacto: ")
