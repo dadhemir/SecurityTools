@@ -21,69 +21,25 @@ def analyze_ip_with_shodan(ip):
         results = api.host(ip)
         report = f"Shodan results for IP {ip}:\n"
         report += f"Organization: {results.get('org', 'N/A')}\n"
-        report += f"Operating System: {results.get('os', 'N/A')}\n\n"
+        report += f"Operating System: {results.get('os', 'N/A')}\n"
 
         vulnerabilities = results.get('vulns', [])
         if vulnerabilities:
-            # Dictionary to store CVEs by severity
-            severity_groups = {
-                'CRITICAL': [],
-                'HIGH': [],
-                'MEDIUM': [],
-                'LOW': [],
-                'UNKNOWN': []
-            }
-
-            # Get details for each CVE and group them
+            report += "CVEs found:\n"
             for cve in vulnerabilities:
-                try:
-                    url = f"https://services.nvd.nist.gov/rest/json/cves/2.0?cveId={cve}"
-                    response = requests.get(url, headers={'User-Agent': 'Python Script'})
-
-                    if response.status_code == 200:
-                        data = response.json()
-                        if data['vulnerabilities']:
-                            vuln = data['vulnerabilities'][0]['cve']
-                            metrics = vuln.get('metrics', {})
-
-                            # Get CVSS data
-                            if 'cvssMetricV31' in metrics:
-                                cvss = metrics['cvssMetricV31'][0]
-                            elif 'cvssMetricV30' in metrics:
-                                cvss = metrics['cvssMetricV30'][0]
-                            else:
-                                severity_groups['UNKNOWN'].append((cve, 'N/A', 'No CVSS data available'))
-                                continue
-
-                            base_score = cvss['cvssData']['baseScore']
-                            severity = cvss['cvssData']['baseSeverity']
-                            description = vuln['descriptions'][0]['value']
-
-                            severity_groups[severity].append((cve, base_score, description))
-                    else:
-                        severity_groups['UNKNOWN'].append((cve, 'N/A', 'Failed to fetch details'))
-
-                except Exception as e:
-                    severity_groups['UNKNOWN'].append((cve, 'N/A', f'Error: {str(e)}'))
-
-            # Generate report grouped by severity
-            report += "CVEs found (grouped by severity):\n"
-
-            for severity in ['CRITICAL', 'HIGH', 'MEDIUM', 'LOW', 'UNKNOWN']:
-                cves = severity_groups[severity]
-                if cves:
-                    report += f"\n{severity} Severity Vulnerabilities:\n"
-                    report += "=" * 50 + "\n"
-                    for cve, score, desc in sorted(cves, key=lambda x: x[1] if isinstance(x[1], (int, float)) else -1, reverse=True):
-                        report += f"  {cve}\n"
-                        report += f"  Score: {score}\n"
-                        report += f"  Description: {desc}\n\n"
-
+                report += f"- {cve}\n"
         else:
             report += "No CVEs found.\n"
         return report
     except shodan.APIError as e:
         return f"Error: {e}\n"
+
+def run_theharvester(domain):
+    try:
+        result = subprocess.run(['theHarvester', '-d', domain, '-b', 'all'], capture_output=True, text=True)
+        return result.stdout
+    except subprocess.CalledProcessError as e:
+        return f"Error running theHarvester: {e}"
 
 def check_hibp(domain):
     url = f"https://haveibeenpwned.com/api/v3/breaches?domain={domain}"
@@ -105,7 +61,7 @@ def check_hibp(domain):
         report += f"Error checking HIBP: {response.status_code}\n"
     return report
 
-def export_to_pdf(domain, ip, shodan_report, hibp_report):
+def export_to_pdf(domain, ip, shodan_report, harvester_report, hibp_report):
     pdf = FPDF()
     pdf.add_page()
     pdf.set_font("Arial", size=12)
@@ -121,6 +77,10 @@ def export_to_pdf(domain, ip, shodan_report, hibp_report):
     # HIBP report
     pdf.multi_cell(0, 10, txt="\nHave I Been Pwned Results:")
     pdf.multi_cell(0, 10, txt=hibp_report)
+
+    # TheHarvester report
+    pdf.multi_cell(0, 10, txt="\nTheHarvester Results:")
+    pdf.multi_cell(0, 10, txt=harvester_report)
 
     # Save PDF
     pdf_file_name = f"{domain}_analysis_report.pdf"
@@ -143,8 +103,12 @@ def main():
     hibp_report = check_hibp(domain)
     print(hibp_report)
 
+    print("\nRunning theHarvester...")
+    harvester_report = run_theharvester(domain)
+    print(harvester_report)
+
     # Export to PDF
-    export_to_pdf(domain, ip, shodan_report, hibp_report)
+    export_to_pdf(domain, ip, shodan_report, harvester_report, hibp_report)
 
 if __name__ == "__main__":
     main()
