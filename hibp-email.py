@@ -1,7 +1,7 @@
 import requests
 
 # Set up your HIBP API key
-HIBP_API_KEY = "###"
+HIBP_API_KEY = "### your Key ###"
 
 # Function to check if an email is part of a data breach using HIBP
 def check_email(email):

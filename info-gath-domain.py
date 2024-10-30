@@ -1,7 +1,7 @@
 import socket
 import shodan
 import requests
-import subprocess
+import time
 from fpdf import FPDF
 
 # API keys (replace with your actual keys)
@@ -105,7 +105,39 @@ def check_hibp(domain):
         report += f"Error checking HIBP: {response.status_code}\n"
     return report
 
-def export_to_pdf(domain, ip, shodan_report, hibp_report):
+def check_email_hibp(email):
+    url = f"https://haveibeenpwned.com/api/v3/breachedaccount/{email}?truncateResponse=false"
+
+    headers = {
+        'hibp-api-key': HIBP_API_KEY,
+        'User-Agent': 'Python Script',
+        'Accept': 'application/json'
+    }
+
+    report = f"\nResults for email: {email}\n"
+    report += "=" * 50 + "\n"
+    # Check breaches
+    try:
+        breach_response = requests.get(url, headers=headers)
+        if breach_response.status_code == 200:
+            breaches = breach_response.json()
+            report += f"Found in {len(breaches)} data breaches:\n"
+            for breach in breaches:
+                report += f"\n  Breach: {breach['Name']}"
+                report += f"\n  Compromised Data: {', '.join(breach['DataClasses'])}\n"
+        elif breach_response.status_code == 404:
+            report += "No breaches found.\n"
+        else:
+            report += f"Error checking breachesxx: {breach_response.status_code}\n"
+    except Exception as e:
+        report += f"Error checking breaches: {str(e)}\n"
+
+    # Wait 6 seconds between requests (HIBP rate limit)
+    time.sleep(6)
+
+    return report
+
+def export_to_pdf(domain, ip, shodan_report, hibp_report, email_report):
     pdf = FPDF()
     pdf.add_page()
     pdf.set_font("Arial", size=12)
@@ -115,12 +147,16 @@ def export_to_pdf(domain, ip, shodan_report, hibp_report):
     pdf.cell(200, 10, txt=f"IP Address: {ip if ip else 'Not Resolved'}", ln=True)
 
     # Shodan report
-    pdf.multi_cell(0, 10, txt="Shodan Analysis:")
+    pdf.multi_cell(0, 10, txt="Information Gathering Analysis:")
     pdf.multi_cell(0, 10, txt=shodan_report)
 
     # HIBP report
-    pdf.multi_cell(0, 10, txt="\nHave I Been Pwned Results:")
+    pdf.multi_cell(0, 10, txt="\nData Leaks Results:")
     pdf.multi_cell(0, 10, txt=hibp_report)
+
+    # Email HIBP report
+    pdf.multi_cell(0, 10, txt="\nEmail Data Leaks Results:")
+    pdf.multi_cell(0, 10, txt=email_report)
 
     # Save PDF
     pdf_file_name = f"{domain}_analysis_report.pdf"
@@ -129,6 +165,8 @@ def export_to_pdf(domain, ip, shodan_report, hibp_report):
 
 def main():
     domain = input("Enter a domain to analyze: ")
+    email1 = input("Enter first email to check: ")
+    email2 = input("Enter second email to check: ")
 
     ip = get_ip_from_domain(domain)
     if ip:
@@ -143,8 +181,18 @@ def main():
     hibp_report = check_hibp(domain)
     print(hibp_report)
 
+    # Email HIBP checks
+    print("\nChecking Have I Been Pwned for emails...")
+    email_report = ""
+    for email in [email1, email2]:
+        if email:  # Only check if email is provided
+            print(f"Checking {email}...")
+            email_report += check_email_hibp(email)
+            time.sleep(1.5)  # Rate limiting between email checks
+    print(email_report)
+
     # Export to PDF
-    export_to_pdf(domain, ip, shodan_report, hibp_report)
+    export_to_pdf(domain, ip, shodan_report, hibp_report, email_report)
 
 if __name__ == "__main__":
     main()
