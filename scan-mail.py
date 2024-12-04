@@ -1,9 +1,14 @@
+import os
 import openai
 import email
 from email.policy import default
+from dotenv import load_dotenv
 
 # Set your OpenAI API key
-openai.api_key = '### your Key ###'
+load_dotenv()
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+openai.api_key = OPENAI_API_KEY
+
 
 def extract_eml_details(eml_file_path):
     with open(eml_file_path, 'r', encoding='utf-8') as f:
