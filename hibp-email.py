@@ -1,7 +1,10 @@
+import os
 import requests
+from dotenv import load_dotenv
 
 # Set up your HIBP API key
-HIBP_API_KEY = "### your Key ###"
+load_dotenv()
+HIBP_API_KEY = os.getenv('HIBP_API_KEY')
 
 # Function to check if an email is part of a data breach using HIBP
 def check_email(email):
