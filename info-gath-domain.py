@@ -3,10 +3,14 @@ import shodan
 import requests
 import time
 from fpdf import FPDF
+from dotenv import load_dotenv
+import os
 
-# API keys (replace with your actual keys)
-SHODAN_API_KEY = '### your Key ###'
-HIBP_API_KEY = '### your Key ###'
+load_dotenv()  # Carga las variables del archivo .env
+
+# Accede a las variables
+SHODAN_API_KEY = os.getenv('SHODAN_API_KEY')
+HIBP_API_KEY = os.getenv('HIBP_API_KEY')
 
 def get_ip_from_domain(domain):
     try:
