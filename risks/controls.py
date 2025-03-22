@@ -114,7 +114,7 @@ print(f"Nueva probabilidad: {nueva_probabilidad}")
 print(f"Nuevo impacto: {nuevo_impacto}")
 #print(f"Riesgo original: {riesgo_original}")
 print(f"Riesgo nuevo: {riesgo_nuevo}")
-print(f"Porcentaje de mitigación del riesgo a ingresar en SIMPLERISK: {porcentaje_mitigacion:.2f}%")
+print(f"Porcentaje de mitigación del riesgo a ingresar en risk manager platform: {porcentaje_mitigacion:.2f}%")
 
 # Created/Modified files during execution:
 # None
