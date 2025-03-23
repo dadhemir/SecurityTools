@@ -34,7 +34,7 @@ def procesar_controles(archivo_xlsx, codigos_entrada):
 
 def obtener_codigos_usuario():
   codigos = []
-  print("Ingrese los códigos (presione Enter sin ingresar nada para terminar):")
+  print("Ingrese los códigos bajo la expresión regular <num>.## (presione Enter sin ingresar nada para terminar):")
   while True:
       entrada = input("Código: ")
       if entrada == "":
