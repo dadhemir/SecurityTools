@@ -26,7 +26,7 @@ Provide a summary of your findings:
 
 # Make the API call to GPT-4
 response = openai.ChatCompletion.create(
-    model="gpt-4o-2024-05-13",
+    model="gpt-4.5-preview-2025-02-27",
     messages=[
         {"role": "system", "content": "You are a cybersecurity expert."},
         {"role": "user", "content": prompt}

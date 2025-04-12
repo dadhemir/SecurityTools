@@ -44,7 +44,8 @@ def review_email_with_gpt4(email_details):
 
     # Query GPT-4o for review
     response = openai.ChatCompletion.create(
-        model="gpt-4o-2024-05-13",
+        #model="gpt-4o-2024-05-13",
+        model="gpt-4.5-preview-2025-02-27",
         messages=[
             {"role": "system", "content": "You are a security expert tasked with identifying phishing emails."},
             {"role": "user", "content": f"Analyze the following email content and determine if it's phishing or legitimate:\n\n{content}"}
@@ -70,5 +71,5 @@ def main(eml_file_path):
     print(review)
 
 if __name__ == "__main__":
-    eml_file_path = "mail.eml"  # Replace with your .eml file path
+    eml_file_path = "ai/mail.eml"  # Replace with your .eml file path
     main(eml_file_path)

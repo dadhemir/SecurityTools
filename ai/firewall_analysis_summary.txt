@@ -1,0 +1,43 @@
+The provided firewall logs display several indicators of attempted cyber attacks and potential security concerns:
+
+### Key Findings:
+
+1. **Repeated RDP (Remote Desktop Protocol) Attempts**:
+- Target Port: TCP 3389 (RDP).
+- Multiple external IP addresses (e.g., 137.74.226.3, 178.214.201.12, 201.237.143.78, etc.) repeatedly attempt connections.
+- Various failed and successful attempts, indicating possible brute-force attacks on an open/exposed RDP endpoint.
+
+2. **Suspicious SMB (Microsoft-DS) Connection Attempts**:
+- Target Ports: TCP 445.
+- Numerous dropped connections from external IPs (e.g., 193.232.107.183, 125.76.225.197, 101.255.44.158), suggesting scanning attempts for "EternalBlue" or similar exploits targeting SMB vulnerabilities.
+
+3. **Telnet Brute-Force Attempts**:
+- Target Port: TCP 23 (Telnet).
+- Regular attempts from multiple external IPs, such as 181.48.*.* IP range, repeatedly targeting Telnet services.
+
+4. **Suspicious High Ports and Random Port Attack Attempts**:
+- Several connection attempts made to unusual or high-numbered ports (e.g., 8545, 37215, 8291, 7547), often associated with botnets or malware probing for vulnerable IoT devices.
+
+5. **UDP Flooding Attempts**:
+- Repeated and persistent UDP packets coming from IP addresses 49.51.*.*, indicating possible denial-of-service (DoS) or scanning activity targeting random high-numbered ports.
+
+6. **Suspicious Internal Traffic (LAN Segment)**:
+- Source IP: 169.254.183.13 (Link-local IP) repeatedly sending NetBIOS queries (UDP 137) to internal address 192.168.60.253. This may indicate internal misconfiguration or compromised device activities on the local network segment.
+
+7. **Suspicious Successful Connections**:
+- Some ACCEPT logs show accepted TCP 8443 (HTTPS alternate) traffic from IPs within 184.105.247.*, which may indicate undesirable remote access to internal resources.
+
+### Summary of Findings:
+The firewall logs show signs of suspicious and potentially malicious activities, including:
+- Persistent brute-force attempts targeting RDP, SMB (Microsoft-DS), Telnet, and other known vulnerable ports commonly exploited by malware and attackers.
+- Repeated connections from geographically diverse IP addresses, suggesting automated scanners or botnets.
+- Probable DoS attempts through UDP packet flooding.
+- Internal anomalies - suspicious NetBIOS queries from local devices that may indicate internal network misconfigurations or compromised machines.
+- Suspicious accepted traffic on ports such as 8443 from possibly unknown external locations.
+
+### Recommended Actions:
+- Immediately investigate devices with open RDP (port 3389) and SMB (port 445) services, ensure they are patched and protected behind VPN or other secure means.
+- Block or restrict unnecessary exposure and verify any legitimate intent for accepted connections from external IPs on unusual ports.
+- Review the legitimacy and current state of internal devices generating suspicious internal traffic.
+- Enhance firewall rules to prevent future brute force and scanning attempts, including implementing rate limits, IP banning, and monitoring suspicious port traffic.
+- Regularly update and validate logging and monitoring systems to identify such potential threats earlier and minimize impact.
