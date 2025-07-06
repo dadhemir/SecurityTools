@@ -22,6 +22,6 @@ def check_pwned_password(password):
     return 'Password not found in the Pwned Passwords database.'
 
 # Example usage:
-password_to_check = 'platzi'
+password_to_check = 'q1w2e3r4'
 result = check_pwned_password(password_to_check)
 print(result)
