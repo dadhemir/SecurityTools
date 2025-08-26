@@ -1,0 +1,6 @@
+requests
+shodan
+openai
+boto3
+reportlab
+python-dotenv
