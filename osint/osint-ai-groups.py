@@ -211,7 +211,7 @@ def generate_pdf_report(target, emailrep_data, hibp_data, shodan_data, ai_recomm
     )
     
     # Header
-    story.append(Paragraph("Gracias por participar de Platzi CONF 2025!", title_style))
+    story.append(Paragraph("Gracias tu interés en Platzi, donde Nunca pararás de aprender!", title_style))
     story.append(Paragraph("Esto es un ejemplo de cómo puedes utilizar AI en ciberseguridad.", header_style))
     story.append(Spacer(1, 20))
     
